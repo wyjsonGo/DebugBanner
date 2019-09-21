@@ -22,7 +22,7 @@ allprojects {
 ```
 and
 ```groovy
-implementation "com.github.wangyao5018:DebugBanner:1.0.1"
+implementation "com.github.wangyao5018:DebugBanner:1.0.2"
 ```
 
 ### 初始化
