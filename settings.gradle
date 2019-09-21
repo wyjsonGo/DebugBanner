@@ -1,0 +1,2 @@
+include ':app', ':debugbannerlibrary'
+rootProject.name='DebugBanner'
