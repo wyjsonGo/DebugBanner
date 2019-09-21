@@ -6,9 +6,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import com.wyjson.debugbannerlibrary.utils.ScreenUtils;
 
 /**
@@ -26,10 +23,10 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
 
     public static final class Companion {
         public final void init(Application application, Banner banner) {
-            new DebugBanner(application, banner, false, null);
+            new DebugBanner(application, banner, false);
         }
 
-        public final void init(Application application, Banner banner, boolean filterShow, @NonNull Class... activities) {
+        public final void init(Application application, Banner banner, boolean filterShow, Class... activities) {
             new DebugBanner(application, banner, filterShow, activities);
         }
 
@@ -39,7 +36,7 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
 
     }
 
-    private DebugBanner(Application app, Banner banner, boolean filterShow, @NonNull Class... activities) {
+    private DebugBanner(Application app, Banner banner, boolean filterShow, Class... activities) {
         this.banner = banner;
         app.registerActivityLifecycleCallbacks(this);
         setFilter(filterShow, activities);
@@ -49,7 +46,7 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
      * @param show
      * @param activities
      */
-    public void setFilter(boolean show, @NonNull Class... activities) {
+    public void setFilter(boolean show, Class... activities) {
         this.showFlag = show;
         this.activities = activities;
     }
@@ -70,7 +67,7 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
     }
 
     @Override
-    public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle bundle) {
+    public void onActivityCreated(Activity activity, Bundle bundle) {
         if (needShow(activity)) {
 
             ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
@@ -90,32 +87,32 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
     }
 
     @Override
-    public void onActivityStarted(@NonNull Activity activity) {
+    public void onActivityStarted(Activity activity) {
 
     }
 
     @Override
-    public void onActivityResumed(@NonNull Activity activity) {
+    public void onActivityResumed(Activity activity) {
 
     }
 
     @Override
-    public void onActivityPaused(@NonNull Activity activity) {
+    public void onActivityPaused(Activity activity) {
 
     }
 
     @Override
-    public void onActivityStopped(@NonNull Activity activity) {
+    public void onActivityStopped(Activity activity) {
 
     }
 
     @Override
-    public void onActivitySaveInstanceState(@NonNull Activity activity, @NonNull Bundle bundle) {
+    public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
 
     }
 
     @Override
-    public void onActivityDestroyed(@NonNull Activity activity) {
+    public void onActivityDestroyed(Activity activity) {
 
     }
 }

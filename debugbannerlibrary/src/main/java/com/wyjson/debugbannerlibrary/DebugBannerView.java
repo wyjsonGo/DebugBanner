@@ -6,14 +6,13 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Typeface;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
-import androidx.core.content.ContextCompat;
-import androidx.core.view.ViewCompat;
 
 import com.wyjson.debugbannerlibrary.utils.ScreenUtils;
 

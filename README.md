@@ -1,4 +1,6 @@
 # DebugBanner
+[![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Download](https://api.bintray.com/packages/tangsiyuan/maven/myokhttp/images/download.svg) ](https://bintray.com/wangyao5018/maven/DebugBanner/_latestVersion)
 
 调试显示选中的模式横幅标签(debug show checked mode banner label),看到flutter有这个功能.
 
