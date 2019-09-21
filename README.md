@@ -5,7 +5,6 @@
 ![](screenshots/1.png)
 
 ![](screenshots/2.png)
-![](screenshots/3.png)
 
 ### 使用
 Gradle:
@@ -94,7 +93,7 @@ or
 ### 感谢
 [https://github.com/armcha/DebugBanner](https://github.com/armcha/DebugBanner) 
 
-我是按照这个Library来写的,这个是Kotlin实现的.
+我是按照armcha/DebugBanner Library来写的,增加过滤Activity功能,armcha/DebugBanner是用Kotlin实现的.
 
         
         
