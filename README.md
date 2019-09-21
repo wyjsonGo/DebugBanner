@@ -4,7 +4,7 @@
 
 ![](screenshots/1.png)
 
-![](screenshots/2.png)
+![](screenshots/4.png)
 
 ### 使用
 Gradle:
