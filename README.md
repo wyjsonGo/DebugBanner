@@ -1,18 +1,29 @@
 # DebugBanner
 
-调试显示选中的模式横幅标签(debug show checked mode banner label)
+调试显示选中的模式横幅标签(debug show checked mode banner label),看到flutter有这个功能.
 
 ![](screenshots/1.png)
 
 ![](screenshots/4.png)
 
-### 使用
+## 使用
 Gradle:
+```groovy
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+        maven { url 'https://dl.bintray.com/wangyao5018/maven' }
+    }
+}
+```
+and
 ```groovy
 implementation "com.github.wangyao5018:DebugBanner:1.0.1"
 ```
 
-## 初始化
+### 初始化
 
 ```java
    /**
@@ -61,7 +72,7 @@ or
 ```
 
 
-## 额外
+### 额外
 
 ```java
    /**
@@ -90,10 +101,10 @@ or
 }
 
 ```
-### 感谢
+## 感谢
 [https://github.com/armcha/DebugBanner](https://github.com/armcha/DebugBanner) 
 
-我是按照armcha/DebugBanner Library来写的,增加过滤Activity功能,armcha/DebugBanner是用Kotlin实现的.
+看到flutter有这个功能,我是按照armcha/DebugBanner Library来写的,增加过滤Activity功能,armcha/DebugBanner是用Kotlin实现的.
 
         
         

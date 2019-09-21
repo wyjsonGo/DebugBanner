@@ -20,7 +20,7 @@ allprojects {
         google()
         jcenter()
 
-        maven { url 'https://dl.bintray.com/wangyao5018/wyjson' }
+        maven { url 'https://dl.bintray.com/wangyao5018/maven' }
     }
 }
 

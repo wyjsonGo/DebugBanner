@@ -35,7 +35,7 @@ dependencies {
 }
 
 publish {
-    repoName = "wyjson"//仓库名，没有填写时默认仓库是maven
+    repoName = "maven"//仓库名，没有填写时默认仓库是maven
     userOrg = 'wangyao5018'//bintray.com用户名
     groupId = 'com.github.wangyao5018'//jcenter上的路径
     artifactId = 'DebugBanner'//项目名称
