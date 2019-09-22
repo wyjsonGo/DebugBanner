@@ -11,17 +11,6 @@
 ## 使用
 Gradle:
 ```groovy
-allprojects {
-    repositories {
-        google()
-        jcenter()
-
-        maven { url 'https://dl.bintray.com/wangyao5018/maven' }
-    }
-}
-```
-and
-```groovy
 implementation "com.github.wangyao5018:DebugBanner:1.0.2"
 ```
 
