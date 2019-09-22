@@ -101,12 +101,12 @@ public class MyApplication extends Application {
         public void run() {
             //设置线程的优先级，不与主线程抢资源
             Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-			/**
-		     * release打包不显示
-		     */
-		    if (BuildConfig.DEBUG) {
-		        DebugBanner.Companion.init(mInstance, new Banner());
-		    }
+	   /**
+	     * release打包不显示
+	     */
+	    if (BuildConfig.DEBUG) {
+		DebugBanner.Companion.init(mInstance, new Banner());
+	    }
 
 
         }
