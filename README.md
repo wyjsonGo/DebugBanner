@@ -26,12 +26,13 @@ implementation "com.github.wangyao5018:DebugBanner:1.0.2"
 ```
 
 ### 初始化
+在Application里
 
 ```java
    /**
-	 * 默认,全部页面显示
-	 */
-  	DebugBanner.Companion.init(mInstance, new Banner());
+     *  默认,全部页面显示
+     */
+     DebugBanner.Companion.init(mInstance, new Banner());
 ```
 or
 
@@ -74,18 +75,44 @@ or
 ```
 
 
-### 额外
+## 额外
+优化启动
 
 ```java
-   /**
-     * release打包不显示
-     */
-    if (BuildConfig.DEBUG) {
-        DebugBanner.Companion.init(mInstance, new Banner());
+public class MyApplication extends Application {
+
+  @Override
+    public void onCreate() {
+        super.onCreate();
+        mInstance = this;
+
+        runOnWorkThread(initThirdServiceRunnable);
     }
+
+    private void runOnWorkThread(Runnable action) {
+        new Thread(action).start();
+    }
+
+    /**
+     * 子线程初始化,优化启动
+     */
+    private Runnable initThirdServiceRunnable = new Runnable() {
+        @Override
+        public void run() {
+            //设置线程的优先级，不与主线程抢资源
+            Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
+			/**
+		     * release打包不显示
+		     */
+		    if (BuildConfig.DEBUG) {
+		        DebugBanner.Companion.init(mInstance, new Banner());
+		    }
+
+
+        }
+    };
+}
 ```
-
-
 按照页面分别设置不同样式
 
 ```java
@@ -103,6 +130,7 @@ or
 }
 
 ```
+
 ## 感谢
 [https://github.com/armcha/DebugBanner](https://github.com/armcha/DebugBanner) 
 
