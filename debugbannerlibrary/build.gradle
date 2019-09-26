@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0.2"
+        versionCode 3
+        versionName "1.0.3"
     }
 
     buildTypes {
@@ -33,7 +33,7 @@ publish {
     userOrg = 'wangyao5018'//bintray.com用户名
     groupId = 'com.github.wangyao5018'//jcenter上的路径
     artifactId = 'DebugBanner'//项目名称
-    publishVersion = '1.0.2'//版本号
+    publishVersion = '1.0.3'//版本号
     desc = 'debug show checked mode banner label'//描述
     website = 'https://github.com/wangyao5018/DebugBanner'//github上的地址
 }

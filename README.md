@@ -11,7 +11,7 @@
 ## 使用
 Gradle:
 ```groovy
-implementation "com.github.wangyao5018:DebugBanner:1.0.2"
+implementation "com.github.wangyao5018:DebugBanner:1.0.3"
 ```
 
 ### 初始化
