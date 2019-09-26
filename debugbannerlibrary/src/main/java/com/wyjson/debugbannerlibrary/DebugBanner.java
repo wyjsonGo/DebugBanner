@@ -80,7 +80,7 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
             debugBannerView.setBannerGravity(localBanner.getBannerGravity());
             int bannerSize = activity.getResources().getDimensionPixelOffset(R.dimen.banner_default_size);
             decorView.addView(debugBannerView, new ViewGroup.MarginLayoutParams(bannerSize, bannerSize));
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
                 debugBannerView.setTranslationY(ScreenUtils.getStatusBarHeight(activity));
 
         }
