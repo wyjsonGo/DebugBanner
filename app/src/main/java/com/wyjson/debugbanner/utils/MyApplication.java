@@ -3,8 +3,6 @@ package com.wyjson.debugbanner.utils;
 import android.app.Application;
 import android.os.Process;
 
-import com.wyjson.debugbanner.activity.MainActivity;
-import com.wyjson.debugbanner.activity.TwoActivity;
 import com.wyjson.debugbannerlibrary.Banner;
 import com.wyjson.debugbannerlibrary.DebugBanner;
 
@@ -58,8 +56,8 @@ public class MyApplication extends Application {
 //            DebugBanner.Companion.init(mInstance,
 //                    new Banner(),
 //                    false,
-//                    MainActivity.class,
-//                    ThreeActivity.class
+//                    "MainActivity",
+//                    "ThreeActivity"
 //            );
 
             /**
@@ -69,8 +67,8 @@ public class MyApplication extends Application {
                     mInstance,
                     new Banner(),
                     true,
-                    MainActivity.class,
-                    TwoActivity.class
+                    "MainActivity",
+                    "TwoActivity"
             );
 
             /**

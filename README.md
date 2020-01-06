@@ -11,7 +11,7 @@
 ## 使用
 Gradle:
 ```groovy
-implementation "com.github.wangyao5018:DebugBanner:1.0.3"
+implementation "com.github.wangyao5018:DebugBanner:1.0.4"
 ```
 
 ### 初始化
@@ -32,8 +32,8 @@ or
     DebugBanner.Companion.init(mInstance,
             new Banner(),
             false,
-            MainActivity.class,
-            ThreeActivity.class
+            "MainActivity",
+            "ThreeActivity"
     );
 ```
 or
@@ -46,8 +46,8 @@ or
             mInstance,
             new Banner(),
             true,
-            MainActivity.class,
-            TwoActivity.class
+            "MainActivity",
+            "TwoActivity"
     );  
 ```
 

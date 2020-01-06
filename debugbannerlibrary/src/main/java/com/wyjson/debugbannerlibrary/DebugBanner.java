@@ -12,7 +12,7 @@ import com.wyjson.debugbannerlibrary.utils.ScreenUtils;
  * debug show checked mode banner label
  *
  * @author Wyjson
- * @version 1
+ * @version 2 解耦 String... activities
  * @date 2019-09-21 23:45
  */
 public class DebugBanner implements Application.ActivityLifecycleCallbacks {
@@ -26,7 +26,7 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
             new DebugBanner(application, banner, false);
         }
 
-        public final void init(Application application, Banner banner, boolean filterShow, Class... activities) {
+        public final void init(Application application, Banner banner, boolean filterShow, String... activities) {
             new DebugBanner(application, banner, filterShow, activities);
         }
 
@@ -36,7 +36,7 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
 
     }
 
-    private DebugBanner(Application app, Banner banner, boolean filterShow, Class... activities) {
+    private DebugBanner(Application app, Banner banner, boolean filterShow, String... activities) {
         this.banner = banner;
         app.registerActivityLifecycleCallbacks(this);
         setFilter(filterShow, activities);
@@ -46,20 +46,20 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
      * @param show
      * @param activities
      */
-    public void setFilter(boolean show, Class... activities) {
+    public void setFilter(boolean show, String... activities) {
         this.showFlag = show;
         this.activities = activities;
     }
 
-    private Class[] activities;
+    private String[] activities;
     private boolean showFlag;
 
     private boolean needShow(Activity activity) {
         if (activities == null) {
             return true;
         }
-        for (Class a : activities) {
-            if (a.isInstance(activity)) {
+        for (String a : activities) {
+            if (a.equals(activity.getClass().getSimpleName())) {
                 return showFlag;
             }
         }
