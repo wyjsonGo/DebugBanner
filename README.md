@@ -73,8 +73,6 @@ public class MyApplication extends Application {
   @Override
     public void onCreate() {
         super.onCreate();
-        mInstance = this;
-
         runOnWorkThread(initThirdServiceRunnable);
     }
 
@@ -96,8 +94,6 @@ public class MyApplication extends Application {
 	    if (BuildConfig.DEBUG) {
 		DebugBanner.Companion.init(mInstance, new Banner());
 	    }
-
-
         }
     };
 }
