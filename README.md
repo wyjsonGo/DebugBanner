@@ -1,6 +1,6 @@
 # DebugBanner
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Download](https://api.bintray.com/packages/wangyao5018/maven/DebugBanner/images/download.svg) ](https://bintray.com/wangyao5018/maven/DebugBanner/_latestVersion)
+[![Download](https://jitpack.io/v/wyjsonGo/DebugBanner.svg)](https://jitpack.io/#wyjsonGo/DebugBanner)
 
 调试显示选中的模式横幅标签(debug show checked mode banner label),看到flutter有这个功能.
 
@@ -10,8 +10,20 @@
 
 ## 使用
 Gradle:
+
 ```groovy
-implementation "com.github.wangyao5018:DebugBanner:1.0.4"
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+```groovy
+dependencies {
+    implementation 'com.github.wyjsonGo:DebugBanner:Tag'
+}
 ```
 
 ### 初始化
