@@ -33,7 +33,7 @@ dependencies {
    /**
      *  默认,全部页面显示
      */
-     DebugBanner.Companion.init(mInstance, new Banner());
+     DebugBanner.Companion.init(MyApplication.this, new Banner());
 ```
 or
 
@@ -41,7 +41,7 @@ or
    /**
      * 过滤不显示的页面
      */
-    DebugBanner.Companion.init(mInstance,
+    DebugBanner.Companion.init(MyApplication.this,
             new Banner(),
             false,
             "MainActivity",
@@ -55,7 +55,7 @@ or
      * 过滤显示的页面
      */
     DebugBanner.Companion.init(
-            mInstance,
+            MyApplication.this,
             new Banner(),
             true,
             "MainActivity",
@@ -70,7 +70,7 @@ or
      * 自定义样式
      */
     DebugBanner.Companion.init(
-            mInstance,
+            MyApplication.this,
             new Banner(BannerGravity.START, android.R.color.holo_blue_bright, android.R.color.holo_red_light, "BETA")
     );
 ```
@@ -104,7 +104,7 @@ public class MyApplication extends Application {
 	     * release打包不显示
 	     */
 	    if (BuildConfig.DEBUG) {
-		DebugBanner.Companion.init(mInstance, new Banner());
+		DebugBanner.Companion.init(MyApplication.this, new Banner());
 	    }
         }
     };
