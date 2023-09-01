@@ -35,7 +35,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.wyjsonGo'
                 artifactId = 'debugbanner'
-                version = '1.0.6'
+                version = '1.0.5'
             }
         }
     }
