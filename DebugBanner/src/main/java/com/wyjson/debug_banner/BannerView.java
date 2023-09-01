@@ -1,4 +1,4 @@
-package com.wyjson.debugbannerlibrary;
+package com.wyjson.debug_banner;
 
 /**
  * debug show checked mode banner label

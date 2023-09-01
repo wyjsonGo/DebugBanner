@@ -1,10 +1,10 @@
-package com.wyjson.debugbanner.utils;
+package com.wyjson.debugbanner;
 
 import android.app.Application;
 import android.os.Process;
 
-import com.wyjson.debugbannerlibrary.Banner;
-import com.wyjson.debugbannerlibrary.DebugBanner;
+import com.wyjson.debug_banner.Banner;
+import com.wyjson.debug_banner.DebugBanner;
 
 /**
  * 调试旗帜
@@ -16,20 +16,10 @@ import com.wyjson.debugbannerlibrary.DebugBanner;
  */
 public class MyApplication extends Application {
 
-
-    private static MyApplication mInstance;
-
-
     @Override
     public void onCreate() {
         super.onCreate();
-        mInstance = this;
-
         runOnWorkThread(initThirdServiceRunnable);
-    }
-
-    public static MyApplication getInstance() {
-        return mInstance;
     }
 
     private void runOnWorkThread(Runnable action) {
@@ -39,7 +29,7 @@ public class MyApplication extends Application {
     /**
      * 子线程初始化,优化启动
      */
-    private Runnable initThirdServiceRunnable = new Runnable() {
+    private final Runnable initThirdServiceRunnable = new Runnable() {
         @Override
         public void run() {
             //设置线程的优先级，不与主线程抢资源
@@ -48,12 +38,12 @@ public class MyApplication extends Application {
             /**
              * 默认,全部页面显示
              */
-//            DebugBanner.Companion.init(mInstance, new Banner());
+//            DebugBanner.Companion.init(MyApplication.this, new Banner());
 
             /**
              * 过滤不显示的页面
              */
-//            DebugBanner.Companion.init(mInstance,
+//            DebugBanner.Companion.init(MyApplication.this,
 //                    new Banner(),
 //                    false,
 //                    "MainActivity",
@@ -64,7 +54,7 @@ public class MyApplication extends Application {
              * 过滤显示的页面
              */
             DebugBanner.Companion.init(
-                    mInstance,
+                    MyApplication.this,
                     new Banner(),
                     true,
                     "MainActivity",
@@ -75,7 +65,7 @@ public class MyApplication extends Application {
              * 自定义样式
              */
 //            DebugBanner.Companion.init(
-//                    mInstance,
+//                    MyApplication.this,
 //                    new Banner(BannerGravity.START, android.R.color.holo_blue_bright, android.R.color.holo_red_light, "BETA")
 //            );
 
@@ -83,7 +73,7 @@ public class MyApplication extends Application {
              * release打包不显示
              */
 //            if (BuildConfig.DEBUG) {
-//                DebugBanner.Companion.init(mInstance, new Banner());
+//                DebugBanner.Companion.init(MyApplication.this, new Banner());
 //            }
 
         }

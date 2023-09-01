@@ -1,4 +1,6 @@
-package com.wyjson.debugbannerlibrary;
+package com.wyjson.debug_banner;
+
+import androidx.annotation.ColorRes;
 
 /**
  * debug show checked mode banner label
@@ -8,9 +10,10 @@ package com.wyjson.debugbannerlibrary;
  * @date 2019-09-21 23:40
  */
 public class Banner {
+
     private BannerGravity bannerGravity;
-    private int bannerColorRes;
-    private int textColorRes;
+    private @ColorRes int bannerColorRes;
+    private @ColorRes int textColorRes;
     private String bannerText;
 
     public Banner() {
@@ -20,7 +23,7 @@ public class Banner {
         this.bannerText = "DEBUG";
     }
 
-    public Banner(BannerGravity bannerGravity, int bannerColorRes, int textColorRes, String bannerText) {
+    public Banner(BannerGravity bannerGravity, @ColorRes int bannerColorRes, @ColorRes int textColorRes, String bannerText) {
         this.bannerGravity = bannerGravity;
         this.bannerColorRes = bannerColorRes;
         this.textColorRes = textColorRes;

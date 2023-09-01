@@ -1,4 +1,4 @@
-package com.wyjson.debugbannerlibrary;
+package com.wyjson.debug_banner;
 
 import android.app.Activity;
 import android.app.Application;
@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.ViewGroup;
 
-import com.wyjson.debugbannerlibrary.utils.ScreenUtils;
+import com.wyjson.debugbanner.R;
 
 /**
  * debug show checked mode banner label
@@ -17,16 +17,16 @@ import com.wyjson.debugbannerlibrary.utils.ScreenUtils;
  */
 public class DebugBanner implements Application.ActivityLifecycleCallbacks {
 
-    private Banner banner;
+    private final Banner banner;
 
     public static DebugBanner.Companion Companion = new DebugBanner.Companion();
 
     public static final class Companion {
-        public final void init(Application application, Banner banner) {
+        public void init(Application application, Banner banner) {
             new DebugBanner(application, banner, false);
         }
 
-        public final void init(Application application, Banner banner, boolean filterShow, String... activities) {
+        public void init(Application application, Banner banner, boolean filterShow, String... activities) {
             new DebugBanner(application, banner, filterShow, activities);
         }
 
@@ -69,7 +69,6 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
     @Override
     public void onActivityCreated(Activity activity, Bundle bundle) {
         if (needShow(activity)) {
-
             ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
 
             Banner localBanner = activity instanceof BannerView ? ((BannerView) activity).newBanner() : this.banner;
@@ -78,11 +77,11 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
             debugBannerView.updateText(localBanner.getBannerText(), localBanner.getTextColorRes());
             debugBannerView.updateBannerColor(localBanner.getBannerColorRes());
             debugBannerView.setBannerGravity(localBanner.getBannerGravity());
-            int bannerSize = activity.getResources().getDimensionPixelOffset(R.dimen.banner_default_size);
+            int bannerSize = activity.getResources().getDimensionPixelOffset(R.dimen.debug_banner_default_size);
             decorView.addView(debugBannerView, new ViewGroup.MarginLayoutParams(bannerSize, bannerSize));
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
                 debugBannerView.setTranslationY(ScreenUtils.getStatusBarHeight(activity));
-
+            }
         }
     }
 

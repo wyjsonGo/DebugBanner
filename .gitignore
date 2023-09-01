@@ -1,13 +1,10 @@
 *.iml
 .gradle
 /local.properties
+/.idea
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 .cxx
-.idea
 *.apk
-/app/release
-/app/sandbox
-signing-configs.gradle

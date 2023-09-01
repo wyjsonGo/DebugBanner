@@ -2,13 +2,14 @@ package com.wyjson.debugbanner.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.wyjson.debug_banner.Banner;
 import com.wyjson.debugbanner.R;
-import com.wyjson.debugbannerlibrary.Banner;
-import com.wyjson.debugbannerlibrary.BannerGravity;
-import com.wyjson.debugbannerlibrary.BannerView;
+import com.wyjson.debug_banner.BannerGravity;
+import com.wyjson.debug_banner.BannerView;
 
 public class TwoActivity extends AppCompatActivity implements BannerView {
 

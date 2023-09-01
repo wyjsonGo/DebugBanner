@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.wyjson.debugbanner">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".utils.MyApplication"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +12,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".activity.MainActivity">
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,11 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.TwoActivity">
-        </activity>
+        <activity android:name=".activity.TwoActivity" />
 
-        <activity android:name=".activity.ThreeActivity">
-        </activity>
+        <activity android:name=".activity.ThreeActivity" />
 
     </application>
 

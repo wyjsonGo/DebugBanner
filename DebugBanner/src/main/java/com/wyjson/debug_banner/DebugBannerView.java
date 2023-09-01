@@ -1,4 +1,4 @@
-package com.wyjson.debugbannerlibrary;
+package com.wyjson.debug_banner;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -6,15 +6,16 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Typeface;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.wyjson.debugbannerlibrary.utils.ScreenUtils;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
+
+import com.wyjson.debugbanner.R;
 
 /**
  * debug show checked mode banner label
@@ -30,14 +31,13 @@ public final class DebugBannerView extends FrameLayout {
     private float bannerHeight;
     private BannerGravity bannerGravity;
 
-
     public DebugBannerView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
     private void init(Context context) {
-        bannerHeight = context.getResources().getDimension(R.dimen.banner_default_height);
+        bannerHeight = context.getResources().getDimension(R.dimen.debug_banner_default_height);
 
         this.paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(Color.RED);
@@ -83,19 +83,18 @@ public final class DebugBannerView extends FrameLayout {
                 this.setTranslationX(ScreenUtils.getScreenWidth(getContext()) - this.getMeasuredHeight());
             }
         }
-
     }
 
-    public final void setBannerGravity(BannerGravity bannerGravity) {
+    public void setBannerGravity(BannerGravity bannerGravity) {
         this.bannerGravity = bannerGravity;
     }
 
-    public final void updateText(String text, int textColor) {
+    public void updateText(String text, int textColor) {
         textView.setText(text);
         textView.setTextColor(ContextCompat.getColor(this.getContext(), textColor));
     }
 
-    public final void updateBannerColor(int bannerColor) {
+    public void updateBannerColor(int bannerColor) {
         this.paint.setColor(ContextCompat.getColor(this.getContext(), bannerColor));
     }
 
