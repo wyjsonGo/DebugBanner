@@ -22,9 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.TwoActivity" />
+        <activity android:name="com.wyjson.debug_banner.demo.activity.TwoActivity" />
 
-        <activity android:name=".activity.ThreeActivity" />
+        <activity android:name="com.wyjson.debug_banner.demo.activity.ThreeActivity" />
 
     </application>
 

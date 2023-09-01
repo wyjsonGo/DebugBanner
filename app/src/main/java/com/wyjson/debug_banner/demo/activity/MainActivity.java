@@ -1,4 +1,4 @@
-package com.wyjson.debugbanner.activity;
+package com.wyjson.debug_banner.demo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.wyjson.debugbanner.R;
+import com.wyjson.debug_banner.demo.R;
 
 public class MainActivity extends AppCompatActivity {
 

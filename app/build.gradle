@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    namespace 'com.wyjson.debugbanner'
+    namespace 'com.wyjson.debug_banner.demo'
 
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.wyjson.debugbanner"
+        applicationId "com.wyjson.debug_banner.demo"
         minSdk 17
         targetSdk 33
         versionCode 1
@@ -31,4 +31,5 @@ android {
 dependencies {
     implementation "androidx.appcompat:appcompat:1.6.1"
     implementation project(path: ':DebugBanner')
+//    implementation 'com.github.wyjsonGo:DebugBanner:1.0.5'
 }

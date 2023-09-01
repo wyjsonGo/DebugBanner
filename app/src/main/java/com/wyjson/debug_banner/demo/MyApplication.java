@@ -1,4 +1,4 @@
-package com.wyjson.debugbanner;
+package com.wyjson.debug_banner.demo;
 
 import android.app.Application;
 import android.os.Process;
