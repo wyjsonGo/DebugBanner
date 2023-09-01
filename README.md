@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Download](https://jitpack.io/v/wyjsonGo/DebugBanner.svg)](https://jitpack.io/#wyjsonGo/DebugBanner)
 
-调试显示选中的模式横幅标签(debug show checked mode banner label),看到flutter有这个功能.
+调试横幅标签(debug show checked mode banner label),看到flutter有这个功能.
 
 ![](screenshots/1.png)
 
@@ -127,19 +127,3 @@ public class MyApplication extends Application {
 }
 
 ```
-
-## 感谢
-[https://github.com/armcha/DebugBanner](https://github.com/armcha/DebugBanner) 
-
-看到flutter有这个功能,我是按照armcha/DebugBanner Library来写的,增加过滤Activity功能,armcha/DebugBanner是用Kotlin实现的.
-
-        
-        
-        
-        
-        
-        
-        
-
-
-
