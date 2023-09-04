@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.library'
-//    id 'maven-publish'
 }
 
 android {
@@ -28,16 +27,3 @@ android {
 dependencies {
     implementation 'androidx.core:core:1.9.0'
 }
-
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            release(MavenPublication) {
-//                from components.release
-//                groupId = 'com.github.wyjsonGo'
-//                artifactId = 'DebugBanner'
-//                version = '1.0.5'
-//            }
-//        }
-//    }
-//}
