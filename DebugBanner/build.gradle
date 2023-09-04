@@ -32,7 +32,8 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core:1.9.0'
+//    implementation 'androidx.core:core:1.9.0'
+    implementation "androidx.appcompat:appcompat:1.6.1"
 }
 
 afterEvaluate {
@@ -42,7 +43,7 @@ afterEvaluate {
                 components.getByName('release')
                 groupId = 'com.github.wyjsonGo'
                 artifactId = 'DebugBanner'
-                version = '1.0.5'
+                version = '1.0.6'
             }
         }
     }
