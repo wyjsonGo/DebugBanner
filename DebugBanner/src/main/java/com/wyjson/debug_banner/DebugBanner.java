@@ -6,8 +6,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.ViewGroup;
 
-import com.wyjson.debugbanner.R;
-
 /**
  * debug show checked mode banner label
  *

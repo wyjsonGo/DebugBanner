@@ -15,8 +15,6 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 
-import com.wyjson.debugbanner.R;
-
 /**
  * debug show checked mode banner label
  *
