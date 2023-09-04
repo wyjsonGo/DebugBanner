@@ -22,7 +22,7 @@ allprojects {
 
 ```groovy
 dependencies {
-    implementation 'com.github.wyjsonGo:DebugBanner:1.0.5'
+    implementation 'com.github.wyjsonGo:DebugBanner:1.0.9'
 }
 ```
 
