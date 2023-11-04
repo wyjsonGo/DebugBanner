@@ -1,18 +1,20 @@
-# DebugBanner
+# [DebugBanner](https://github.com/wyjsonGo/DebugBanner)
+
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Download](https://jitpack.io/v/wyjsonGo/DebugBanner.svg)](https://jitpack.io/#wyjsonGo/DebugBanner)
 
-调试横幅标签(debug show checked mode banner label),看到flutter有这个功能.
+> 调试横幅标签(debug show checked mode banner label)，看到flutter有这个功能。
 
-![](screenshots/1.png)
+![sample1.png](screenshots/sample1.png)
 
-![](screenshots/4.png)
+![sample2.png](screenshots/sample2.png)
 
 ## 使用
-Gradle:
+
+添加依赖
 
 ```groovy
-allprojects {
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         ...
         maven { url 'https://jitpack.io' }
@@ -20,108 +22,65 @@ allprojects {
 }
 ```
 
+[![Release Version](https://jitpack.io/v/wyjsonGo/DebugBanner.svg)](https://jitpack.io/#wyjsonGo/DebugBanner)
+
 ```groovy
 dependencies {
-    implementation 'com.github.wyjsonGo:DebugBanner:1.0.9'
+    implementation 'com.github.wyjsonGo:DebugBanner:1.0.10'
 }
 ```
 
 ### 初始化
+
 在Application里
 
 ```java
-   /**
-     *  默认,全部页面显示
-     */
-     DebugBanner.Companion.init(MyApplication.this, new Banner());
-```
-or
-
-```java
-   /**
-     * 过滤不显示的页面
-     */
-    DebugBanner.Companion.init(MyApplication.this,
-            new Banner(),
-            false,
-            "MainActivity",
-            "ThreeActivity"
-    );
-```
-or
-
-```java
-   /**
-     * 过滤显示的页面
-     */
-    DebugBanner.Companion.init(
-            MyApplication.this,
-            new Banner(),
-            true,
-            "MainActivity",
-            "TwoActivity"
-    );  
+// 默认,全部页面显示
+DebugBanner.Companion.init(this);
 ```
 
-or
+### 进阶用法
+
+自定义初始化
 
 ```java
-    /**
-     * 自定义样式
-     */
-    DebugBanner.Companion.init(
-            MyApplication.this,
-            new Banner(BannerGravity.START, android.R.color.holo_blue_bright, android.R.color.holo_red_light, "BETA")
-    );
+// 过滤不显示的页面
+DebugBanner.Companion.init(
+        this,
+        new Banner(),
+        false,
+        "MainActivity",
+        "ThreeActivity"
+);
+
+// 过滤显示的页面
+DebugBanner.Companion.init(
+        this,
+        new Banner(),
+        true,
+        "MainActivity",
+        "TwoActivity"
+);
+
+// 自定义样式
+DebugBanner.Companion.init(
+        this,
+        new Banner(BannerGravity.START, android.R.color.holo_blue_bright, android.R.color.holo_red_light, "BETA")
+);
 ```
 
-
-## 额外
-优化启动
+不同页面设置不同样式，实现`BannerView`接口
 
 ```java
-public class MyApplication extends Application {
-
-  @Override
-    public void onCreate() {
-        super.onCreate();
-        runOnWorkThread(initThirdServiceRunnable);
-    }
-
-    private void runOnWorkThread(Runnable action) {
-        new Thread(action).start();
-    }
-
-    /**
-     * 子线程初始化,优化启动
-     */
-    private Runnable initThirdServiceRunnable = new Runnable() {
-        @Override
-        public void run() {
-            //设置线程的优先级，不与主线程抢资源
-            Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-	   /**
-	     * release打包不显示
-	     */
-	    if (BuildConfig.DEBUG) {
-		DebugBanner.Companion.init(MyApplication.this, new Banner());
-	    }
-        }
-    };
-}
-```
-按照页面分别设置不同样式
-
-```java
-  public class ExampleActivity extends AppCompatActivity implements BannerView {
+public class ExampleActivity extends AppCompatActivity implements BannerView {
 
     @Override
     public Banner newBanner() {
         return new Banner(
-	        BannerGravity.START, 
-	        android.R.color.holo_blue_light, 
-	        android.R.color.black, 
-	        "BETA"
+            BannerGravity.START,
+            android.R.color.holo_blue_light,
+            android.R.color.black,
+            "BETA"
         );
     }
 }

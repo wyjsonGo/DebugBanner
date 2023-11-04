@@ -20,6 +20,11 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
     public static DebugBanner.Companion Companion = new DebugBanner.Companion();
 
     public static final class Companion {
+
+        public void init(Application application) {
+            new DebugBanner(application, new Banner(), false);
+        }
+
         public void init(Application application, Banner banner) {
             new DebugBanner(application, banner, false);
         }
@@ -70,7 +75,8 @@ public class DebugBanner implements Application.ActivityLifecycleCallbacks {
             ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
 
             Banner localBanner = activity instanceof BannerView ? ((BannerView) activity).newBanner() : this.banner;
-
+            if (localBanner == null)
+                return;
             DebugBannerView debugBannerView = new DebugBannerView(activity, null);
             debugBannerView.updateText(localBanner.getBannerText(), localBanner.getTextColorRes());
             debugBannerView.updateBannerColor(localBanner.getBannerColorRes());

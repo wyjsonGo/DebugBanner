@@ -22,10 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.wyjson.debug_banner.demo.activity.TwoActivity" />
-
-        <activity android:name="com.wyjson.debug_banner.demo.activity.ThreeActivity" />
+        <activity android:name=".activity.TwoActivity" />
+        <activity android:name=".activity.ThreeActivity" />
 
     </application>
 

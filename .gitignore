@@ -7,4 +7,6 @@
 /captures
 .externalNativeBuild
 .cxx
+local.properties
 *.apk
+/repo

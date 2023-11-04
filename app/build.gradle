@@ -30,5 +30,5 @@ android {
 dependencies {
     implementation "androidx.appcompat:appcompat:1.6.1"
     implementation project(path: ':DebugBanner')
-//    implementation 'com.github.wyjsonGo:DebugBanner:1.0.5'
+//    implementation 'com.github.wyjsonGo:DebugBanner:1.0.10'
 }
